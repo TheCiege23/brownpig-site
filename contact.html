@@ -74,11 +74,11 @@
         <div class="card">
           <h3 style="font-size:18px">Rather just email?</h3>
           <p style="font-size:15px">
-            <a class="link" href="mailto:hello@brownpigllc.com">hello@brownpigllc.com</a>
+            <a class="link" href="mailto:support@brownpigllc.online">support@brownpigllc.online</a>
           </p>
           <p style="font-size:14px;color:var(--ink-faint)">
-            Agencies: mention Headless in the subject and we'll send an NDA back before
-            you describe the client.
+            Asking about Headless? Say what you'd build on the fantasy engine — that's
+            actively shaping what we ship.
           </p>
         </div>
       </div>
@@ -106,7 +106,7 @@
               <select id="type" name="type">
                 <option value="b2b">Software for my business</option>
                 <option value="b2c">A consumer app / product idea</option>
-                <option value="headless">Headless — white-label for my agency</option>
+                <option value="headless">Headless — fantasy engine access</option>
                 <option value="rescue">Rescue an existing build</option>
                 <option value="other">Something else</option>
               </select>
@@ -180,7 +180,7 @@
     </div>
     <div class="footer__base">
       <span>© <span data-year>2026</span> Brown Pig LLC. All rights reserved.</span>
-      <span>Wyoming, USA · <a href="mailto:hello@brownpigllc.com">hello@brownpigllc.com</a></span>
+      <span>Wyoming, USA · <a href="mailto:support@brownpigllc.online">support@brownpigllc.online</a></span>
     </div>
   </div>
 </footer>
@@ -236,7 +236,7 @@
             '<p>Thanks ' + String(data.name).replace(/[<>&]/g, "") + ' — we read every one of these ' +
             'ourselves and we\'ll come back to you within one business day.</p>' +
             '<p style="font-size:14px;color:var(--ink-faint)">If it\'s urgent, ' +
-            '<a class="link" href="mailto:hello@brownpigllc.com">email us directly</a>.</p></div>';
+            '<a class="link" href="mailto:support@brownpigllc.online">email us directly</a>.</p></div>';
         } else {
           throw new Error(res.body && res.body.error ? res.body.error : "send failed");
         }
@@ -251,7 +251,7 @@
           "\nBudget: " + (data.budget || "—") + "\n\n" + data.message
         );
         note.innerHTML =
-          'Couldn\'t send from here — <a class="link" href="mailto:hello@brownpigllc.com?subject=' +
+          'Couldn\'t send from here — <a class="link" href="mailto:support@brownpigllc.online?subject=' +
           subject + '&body=' + body + '">open it in your email instead</a>.';
         note.style.color = "#B3261E";
       });
