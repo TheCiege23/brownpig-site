@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Brown Pig LLC</title>
+<meta name="description" content="Tell us what's broken. The first call is free and it isn't a sales call.">
+<meta property="og:title" content="Contact — Brown Pig LLC">
+<meta property="og:description" content="Tell us what's broken. The first call is free and it isn't a sales call.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar__in">
+    <a class="brand" href="/">
+      <span class="brand__mark"><img src="assets/logo.webp" alt="" onerror="this.parentNode.textContent='BP'"></span>
+      <span class="brand__word">BROWN <em>PIG</em></span>
+    </a>
+    <button class="navtoggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="/work">Work</a>
+      <a href="/services">Services</a>
+      <a href="/headless">Headless</a>
+      <a href="/contact" aria-current="page">Contact</a>
+      <a class="btn btn--primary btn--sm" href="#form">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h1 style="font-size:clamp(34px,5.4vw,60px);max-width:16ch">Tell us what's broken.</h1>
+      <p class="lede" style="margin-top:20px">
+        The first call is free, takes about thirty minutes, and isn't a sales call.
+        You describe the workaround you've been living with, we ask the annoying
+        questions, and you leave knowing whether it's worth building — even if the
+        answer is no.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section" id="form">
+    <div class="wrap split">
+
+      <div style="display:grid;gap:26px">
+        <div>
+          <p class="eyebrow">What helps most</p>
+          <div class="steps" style="margin-top:-6px">
+            <div class="step">
+              <div class="step__n">01</div>
+              <div><h3>The workaround</h3><p>What are you doing manually right now? That's usually the real brief.</p></div>
+            </div>
+            <div class="step">
+              <div class="step__n">02</div>
+              <div><h3>Who it hurts</h3><p>You, your staff, or your customers. Changes what we build first.</p></div>
+            </div>
+            <div class="step">
+              <div class="step__n">03</div>
+              <div><h3>Your deadline</h3><p>Even a rough one. "Before the season starts" is a real date to us.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size:18px">Rather just email?</h3>
+          <p style="font-size:15px">
+            <a class="link" href="mailto:hello@brownpigllc.com">hello@brownpigllc.com</a>
+          </p>
+          <p style="font-size:14px;color:var(--ink-faint)">
+            Agencies: mention Headless in the subject and we'll send an NDA back before
+            you describe the client.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <form class="form" id="contactForm" novalidate>
+          <div class="row2">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="row2">
+            <div class="field">
+              <label for="company">Company <span style="font-weight:400;color:var(--ink-faint)">(optional)</span></label>
+              <input id="company" name="company" type="text" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="type">What kind of project</label>
+              <select id="type" name="type">
+                <option value="b2b">Software for my business</option>
+                <option value="b2c">A consumer app / product idea</option>
+                <option value="headless">Headless — white-label for my agency</option>
+                <option value="rescue">Rescue an existing build</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="budget">Rough budget <span style="font-weight:400;color:var(--ink-faint)">(optional, but it saves us both time)</span></label>
+            <select id="budget" name="budget">
+              <option value="">Prefer not to say yet</option>
+              <option>Under $5k</option>
+              <option>$5k – $15k</option>
+              <option>$15k – $40k</option>
+              <option>$40k+</option>
+              <option>Ongoing retainer</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">What's broken?</label>
+            <textarea id="message" name="message" required placeholder="What are you doing manually right now that you wish just happened? Rough is fine — we'll dig into it on the call."></textarea>
+            <span class="field__hint">The more specific the annoyance, the better the first call goes.</span>
+          </div>
+
+          <!-- simple bot trap; humans never see or fill this -->
+          <div style="position:absolute;left:-9999px" aria-hidden="true">
+            <label for="website">Leave this empty</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="btnrow" style="margin-top:6px;align-items:center">
+            <button class="btn btn--primary" type="submit" id="submitBtn">Send it</button>
+            <span id="formNote" style="font-size:14px;color:var(--ink-faint)">We reply within one business day.</span>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="/">
+          <span class="brand__mark"><img src="assets/logo.webp" alt="" onerror="this.parentNode.textContent='BP'"></span>
+          <span class="brand__word">BROWN <em>PIG</em></span>
+        </a>
+        <p>Building apps that solve real problems. A family company, building in public.</p>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="/work">Work</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/headless">Headless division</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="https://allfantasy.ai" target="_blank" rel="noopener">AllFantasy</a></li>
+          <li><a href="https://chimaura.com" target="_blank" rel="noopener">ChimAura</a></li>
+          <li><a href="https://cafeconchimmy.com" target="_blank" rel="noopener">Café Con Chimmy</a></li>
+          <li><a href="/work">Everything else</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© <span data-year>2026</span> Brown Pig LLC. All rights reserved.</span>
+      <span>Wyoming, USA · <a href="mailto:hello@brownpigllc.com">hello@brownpigllc.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  /* preselect project type from ?type= (the Headless page links here with it) */
+  var params = new URLSearchParams(location.search);
+  var t = params.get("type");
+  var sel = document.getElementById("type");
+  if (t && sel) {
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].value === t) { sel.selectedIndex = i; break; }
+    }
+  }
+
+  var form = document.getElementById("contactForm");
+  var btn  = document.getElementById("submitBtn");
+  var note = document.getElementById("formNote");
+
+  function say(msg, ok) {
+    note.textContent = msg;
+    note.style.color = ok ? "var(--clay-deep)" : "#B3261E";
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var data = Object.fromEntries(new FormData(form).entries());
+    if (data.website) { return; }                 // bot
+    if (!data.name || !data.email || !data.message) {
+      say("Name, email and a description, please.", false);
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+    say("", true);
+
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
+      .then(function (res) {
+        if (res.ok) {
+          form.innerHTML =
+            '<div class="card"><h3>Got it.</h3>' +
+            '<p>Thanks ' + String(data.name).replace(/[<>&]/g, "") + ' — we read every one of these ' +
+            'ourselves and we\'ll come back to you within one business day.</p>' +
+            '<p style="font-size:14px;color:var(--ink-faint)">If it\'s urgent, ' +
+            '<a class="link" href="mailto:hello@brownpigllc.com">email us directly</a>.</p></div>';
+        } else {
+          throw new Error(res.body && res.body.error ? res.body.error : "send failed");
+        }
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = "Send it";
+        var subject = encodeURIComponent("Project enquiry — " + (data.company || data.name));
+        var body = encodeURIComponent(
+          "Name: " + data.name + "\nEmail: " + data.email +
+          "\nCompany: " + (data.company || "—") + "\nType: " + data.type +
+          "\nBudget: " + (data.budget || "—") + "\n\n" + data.message
+        );
+        note.innerHTML =
+          'Couldn\'t send from here — <a class="link" href="mailto:hello@brownpigllc.com?subject=' +
+          subject + '&body=' + body + '">open it in your email instead</a>.';
+        note.style.color = "#B3261E";
+      });
+  });
+})();
+</script>
+</body>
+</html>
