@@ -149,6 +149,14 @@ const server = http.createServer((req, res) => {
 
   const candidates = [target, target + ".html", path.join(target, "index.html")];
 
+  // Tolerate a flattened upload: if /assets/site.css isn't there, try /site.css.
+  // GitHub's web uploader drops directory structure, and the pages reference
+  // assets/* either way — this makes both layouts serve identically.
+  if (rel.startsWith("assets/")) {
+    const flat = path.resolve(ROOT, rel.slice("assets/".length));
+    if (flat.startsWith(ROOT)) { candidates.push(flat); }
+  }
+
   (function tryNext(i) {
     if (i >= candidates.length) {
       const notFound = path.join(ROOT, "404.html");
