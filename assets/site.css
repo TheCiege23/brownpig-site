@@ -112,12 +112,12 @@ p { margin: 0; text-wrap: pretty; }
 .brand__word em { font-style: normal; color: var(--clay); }
 
 .nav { display: flex; align-items: center; gap: 4px; }
-.nav a {
+.nav a:not(.btn) {
   text-decoration: none; font-size: 14.5px; font-weight: 500;
   color: var(--ink-soft); padding: 8px 13px; border-radius: 9px;
   transition: background .16s, color .16s;
 }
-.nav a:hover { color: var(--ink); background: var(--line-soft); }
+.nav a:not(.btn):hover { color: var(--ink); background: var(--line-soft); }
 .nav a[aria-current="page"] { color: var(--ink); font-weight: 650; }
 
 .navtoggle {
@@ -135,7 +135,7 @@ p { margin: 0; text-wrap: pretty; }
     padding: 12px var(--gut) 20px; box-shadow: var(--shadow);
   }
   .nav[hidden] { display: none; }
-  .nav a { padding: 12px 10px; font-size: 16px; }
+  .nav a:not(.btn) { padding: 12px 10px; font-size: 16px; }
   .nav .btn { margin-top: 8px; text-align: center; }
 }
 
