@@ -590,8 +590,9 @@ p { margin: 0; }
 @media (max-width: 940px) {
   .hero__in    { grid-template-columns: 1fr; }
   /* Headline leads on narrow screens; the logo follows it rather than pushing
-     the actual message below the fold. */
-  .hero__logo  { width: min(100%, 240px); justify-self: start; }
+     the actual message below the fold. Centred, because left-aligning a 240px
+     mark under full-width copy leaves an obvious hole to its right. */
+  .hero__logo  { width: min(100%, 280px); justify-self: center; }
   .split       { grid-template-columns: 1fr; }
   .grid--3     { grid-template-columns: 1fr; }
   .grid--2     { grid-template-columns: 1fr; }
@@ -605,6 +606,16 @@ p { margin: 0; }
   .hero__blob { width: 260px; height: 260px; right: -110px; top: -120px; }
   .footer__grid { grid-template-columns: 1fr; }
   .nav .btn { margin-left: 0; }
+
+  /* Four stats flex-wrapped 3+1, which reads as a mistake. A 2x2 grid is
+     deliberate at this width and keeps the pairs aligned. */
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 20px; }
+
+  /* Let the reply-time note drop under the submit button instead of being
+     squeezed into the gap beside it. */
+  .btnrow .note { flex-basis: 100%; }
+
+  .footer__base { flex-direction: column; gap: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
