@@ -30,8 +30,15 @@
     { "pattern": "www.brownpigllc.com", "custom_domain": true }
   ],
 
+  // CONTACT_FROM must be on a domain verified for sending in Resend.
+  // onboarding@resend.dev is Resend's shared test sender and will only deliver
+  // to the account's own signup address, so it fails against CONTACT_TO.
+  // send.chimaura.com is already verified; brownpigllc.com is not. This mail is
+  // a notification to our own inbox and nobody external sees the From address,
+  // so a verified domain we already own is enough. reply_to still carries the
+  // enquirer's address, so replying from the inbox reaches them, not us.
   "vars": {
     "CONTACT_TO": "support@brownpigllc.online",
-    "CONTACT_FROM": "Brown Pig site <onboarding@resend.dev>"
+    "CONTACT_FROM": "Brown Pig site <site@send.chimaura.com>"
   }
 }
