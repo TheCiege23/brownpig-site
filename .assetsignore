@@ -1,0 +1,12 @@
+**/node_modules
+**/.git
+**/.DS_Store
+.assetsignore
+.gitignore
+wrangler.jsonc
+worker.js
+server.js
+package.json
+package-lock.json
+bun.lockb
+README.md

@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "brownpig-site",
+  "compatibility_date": "2026-09-04",
+  "main": "worker.js",
+  "observability": { "enabled": true },
+
+  // The site files live at the repo root, so the asset directory is ".".
+  // .assetsignore keeps node_modules (and this worker) out of the upload —
+  // without it, wrangler installs itself into the directory it is uploading
+  // and the 147 MiB workerd binary blows past Cloudflare's 25 MiB asset cap.
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+
+    // Assets are served first for everything except these paths, which must
+    // reach the Worker. Without this, /api/contact would match no asset and
+    // be answered by 404.html instead of the handler.
+    "run_worker_first": ["/api/*", "/healthz"]
+  },
+
+  "vars": {
+    "CONTACT_TO": "support@brownpigllc.online",
+    "CONTACT_FROM": "Brown Pig site <onboarding@resend.dev>"
+  }
+}
