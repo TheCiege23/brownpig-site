@@ -20,6 +20,16 @@
     "run_worker_first": ["/api/*", "/healthz"]
   },
 
+  // Both hostnames are Custom Domains, so the Worker is the origin and
+  // Cloudflare owns the DNS records and certificates for them. Declaring them
+  // here keeps the routing in version control: a fresh deploy recreates it.
+  // Custom Domains match the hostname exactly, which is why www is listed
+  // separately rather than inherited from the apex.
+  "routes": [
+    { "pattern": "brownpigllc.com", "custom_domain": true },
+    { "pattern": "www.brownpigllc.com", "custom_domain": true }
+  ],
+
   "vars": {
     "CONTACT_TO": "support@brownpigllc.online",
     "CONTACT_FROM": "Brown Pig site <onboarding@resend.dev>"
