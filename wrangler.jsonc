@@ -38,7 +38,7 @@
   // so a verified domain we already own is enough. reply_to still carries the
   // enquirer's address, so replying from the inbox reaches them, not us.
   "vars": {
-    "CONTACT_TO": "support@brownpigllc.online",
+    "CONTACT_TO": "support@brownpigllc.com",
     "CONTACT_FROM": "Brown Pig site <site@send.chimaura.com>"
   }
 }

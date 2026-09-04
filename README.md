@@ -67,7 +67,7 @@ Only one, and the site works without it.
 | Variable | Required | What it does |
 |---|---|---|
 | `RESEND_API_KEY` | no | Emails contact submissions. Without it they're written to the Railway logs instead and the form still says thank you. |
-| `CONTACT_TO` | no | Where enquiries land. Default `support@brownpigllc.online`. |
+| `CONTACT_TO` | no | Where enquiries land. Default `support@brownpigllc.com`. |
 | `CONTACT_FROM` | no | Sender. Default is Resend's shared test sender — swap to a verified `@brownpigllc.com` address once the domain is verified in Resend. |
 | `PORT` | no | Railway sets this automatically. |
 

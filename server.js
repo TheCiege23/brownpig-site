@@ -15,7 +15,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
 
-const CONTACT_TO   = process.env.CONTACT_TO   || "support@brownpigllc.online";
+const CONTACT_TO   = process.env.CONTACT_TO   || "support@brownpigllc.com";
 const CONTACT_FROM = process.env.CONTACT_FROM || "Brown Pig site <onboarding@resend.dev>";
 const RESEND_KEY   = process.env.RESEND_API_KEY || "";
 

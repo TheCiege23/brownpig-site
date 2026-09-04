@@ -72,7 +72,7 @@ async function handleContact(request, env) {
       },
       body: JSON.stringify({
         from: env.CONTACT_FROM || "Brown Pig site <onboarding@resend.dev>",
-        to: [env.CONTACT_TO || "support@brownpigllc.online"],
+        to: [env.CONTACT_TO || "support@brownpigllc.com"],
         reply_to: d.email,
         subject: `Enquiry — ${d.company || d.name} (${d.type || "general"})`,
         html:
