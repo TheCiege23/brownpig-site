@@ -12,10 +12,12 @@
 <link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="topbar">
   <div class="wrap topbar__in">
@@ -23,9 +25,8 @@
       <span class="brand__mark"><img src="assets/logo.webp" alt="" onerror="this.parentNode.textContent='BP'"></span>
       <span class="brand__word">BROWN <em>PIG</em></span>
     </a>
-    <button class="navtoggle" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav">
-      <a href="/work" >Work</a>
+      <a href="/work">Work</a>
       <a href="/services">Services</a>
       <a href="/headless">Headless</a>
       <a href="/contact">Contact</a>
@@ -34,25 +35,24 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
-  <!-- ============================================================ hero -- -->
   <section class="hero">
+    <div class="hero__blob" aria-hidden="true"></div>
     <div class="wrap hero__in">
       <div>
-        <p class="eyebrow">Family-run product studio · Est. 2026</p>
+        <p class="eyebrow eyebrow--deep">Family-run product studio · Est. 2026</p>
         <h1>We take things apart and <em>build them back better.</em></h1>
-        <p class="lede">
+        <p class="hero__lede">
           Brown Pig LLC is a husband-and-wife shop that builds software for everyday
           problems — the kind people have quietly worked around for years. Seven products
           live so far. We build our own, we build for companies, and we build under
           other people's brands.
         </p>
-        <div class="btnrow">
+        <div class="btnrow" style="margin-top:32px">
           <a class="btn btn--primary" href="/contact">Start a project</a>
           <a class="btn btn--ghost" href="/work">See what we've shipped</a>
         </div>
-
         <div class="stats">
           <div class="stat"><div class="stat__n">7</div><div class="stat__l">products live</div></div>
           <div class="stat"><div class="stat__n">2</div><div class="stat__l">people, one family</div></div>
@@ -62,96 +62,81 @@
       </div>
 
       <div class="hero__logo">
-        <img src="assets/logo.webp" alt="Brown Pig LLC — building apps that solve real problems" width="512" height="512"
-             onerror="this.closest('.hero__logo').style.display='none'">
+        <div><img src="assets/logo.webp" alt="Brown Pig LLC — building apps that solve real problems" width="512" height="512"></div>
       </div>
     </div>
   </section>
 
-  <hr class="rule">
-
-  <!-- ======================================================== divisions -- -->
   <section class="section">
     <div class="wrap">
       <p class="eyebrow">Three ways to work with us</p>
-      <h2 style="font-size:clamp(28px,4vw,44px);max-width:20ch">One studio, three doors in.</h2>
-      <p class="lede" style="margin-top:18px">
-        Same team, same standard. What changes is whose name ends up on the product.
-      </p>
+      <h2 class="h2" style="max-width:20ch">One studio, three doors in.</h2>
+      <p class="lede" style="margin-top:18px">Same team, same standard. What changes is whose name ends up on the product.</p>
 
       <div class="grid grid--3" style="margin-top:44px">
         <article class="card">
           <div class="card__num">01 — B2B</div>
           <h3>Built for your business</h3>
-          <p>
-            You have a process that spreadsheets, group chats and duct tape stopped
-            holding together. We take it apart, find the actual bottleneck, and build
-            the thing that fixes it.
-          </p>
-          <ul>
-            <li>Internal tools and dashboards</li>
-            <li>Customer portals and booking flows</li>
-            <li>Automations that kill manual re-entry</li>
-            <li>Rescue work on builds that stalled</li>
-          </ul>
-          <a class="link" href="/services">How B2B projects run</a>
+          <p>You have a process that spreadsheets, group chats and duct tape stopped
+             holding together. We take it apart, find the actual bottleneck, and build
+             the thing that fixes it.</p>
+          <div class="ticks">
+            <div class="tick">Internal tools and dashboards</div>
+            <div class="tick">Customer portals and booking flows</div>
+            <div class="tick">Automations that kill manual re-entry</div>
+            <div class="tick">Rescue work on builds that stalled</div>
+          </div>
+          <a class="arrow" href="/services">How B2B projects run →</a>
         </article>
 
         <article class="card">
           <div class="card__num">02 — B2C</div>
           <h3>Built for real people</h3>
-          <p>
-            Our own apps. Every one started as a problem in our own house — a kid's
-            first football season, a grandmother's stories nobody wrote down, four
-            fantasy leagues in four browser tabs.
-          </p>
-          <ul>
-            <li>Consumer apps we own and run</li>
-            <li>Ship-first, no committee</li>
-            <li>Built in public, mistakes included</li>
-            <li>Free tiers that are actually usable</li>
-          </ul>
-          <a class="link" href="/work">See the products</a>
+          <p>Our own apps. Every one started as a problem in our own house — a kid's
+             first football season, a grandmother's stories nobody wrote down, four
+             fantasy leagues in four browser tabs.</p>
+          <div class="ticks">
+            <div class="tick">Consumer apps we own and run</div>
+            <div class="tick">Ship-first, no committee</div>
+            <div class="tick">Built in public, mistakes included</div>
+            <div class="tick">Free tiers that are actually usable</div>
+          </div>
+          <a class="arrow" href="/work">See the products →</a>
         </article>
 
         <article class="card">
           <div class="card__num">03 — Headless</div>
           <h3>Fantasy, without the front end</h3>
-          <p>
-            The engine behind AllFantasy — league connections, live rosters, scoring —
-            opened up so somebody else can build their own fantasy product on top of it
-            instead of spending six months on the plumbing.
-          </p>
-          <ul>
-            <li>Real league data, already in production</li>
-            <li>You build the experience, we run the engine</li>
-            <li>For media, apps and builders</li>
-            <li>In development — early input welcome</li>
-          </ul>
-          <a class="link" href="/headless">Where Headless is at</a>
+          <p>The engine behind AllFantasy — league connections, live rosters, scoring —
+             opened up so somebody else can build their own fantasy product on top of it
+             instead of spending six months on the plumbing.</p>
+          <div class="ticks">
+            <div class="tick">Real league data, already in production</div>
+            <div class="tick">You build the experience, we run the engine</div>
+            <div class="tick">For media, apps and builders</div>
+            <div class="tick">In development — early input welcome</div>
+          </div>
+          <a class="arrow" href="/headless">Where Headless is at →</a>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================= work -- -->
-  <section class="section band">
+  <section class="band">
     <div class="wrap">
       <p class="eyebrow">The shelf</p>
-      <h2 style="font-size:clamp(28px,4vw,44px);max-width:24ch">Seven live products. Not case studies — things you can open right now.</h2>
-      <p class="lede" style="margin-top:18px;max-width:60ch">
-        Every one of these came out of a real problem, shipped, and is running today.
-        Click any of them. They're not mockups.
-      </p>
+      <h2 class="h2" style="max-width:26ch">Seven live products. Not case studies — things you can open right now.</h2>
+      <p style="font-size:17px;max-width:60ch;margin-top:18px">Every one of these came out of a real problem, shipped, and is running today.
+         Click any of them. They're not mockups.</p>
       <div class="btnrow" style="margin-top:28px">
         <a class="btn btn--clay" href="/work">Open the full portfolio</a>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section--tight">
     <div class="wrap">
-      <div class="work">
+      <div class="grid grid--2">
 
         <article class="proj">
           <div class="shot" data-site="https://allfantasy.ai" data-local="assets/shots/allfantasy.png" data-label="AllFantasy"></div>
@@ -160,7 +145,7 @@
             <h3>AllFantasy</h3>
             <p>Every fantasy league you play, on one screen. Pulls your real Sleeper and ESPN rosters so Sunday is one board instead of four tabs.</p>
             <div class="proj__url">allfantasy.ai</div>
-            <div class="proj__foot"><a class="link" href="https://allfantasy.ai" target="_blank" rel="noopener">Open it</a></div>
+            <a class="arrow" href="https://allfantasy.ai" target="_blank" rel="noopener">Open it →</a>
           </div>
         </article>
 
@@ -171,7 +156,7 @@
             <h3>ChimAura</h3>
             <p>Guided meditation, breathing and a daily reflection — in English and Spanish. Short sessions built to reset your nervous system, not to farm your screen time.</p>
             <div class="proj__url">chimaura.com</div>
-            <div class="proj__foot"><a class="link" href="https://chimaura.com" target="_blank" rel="noopener">Open it</a></div>
+            <a class="arrow" href="https://chimaura.com" target="_blank" rel="noopener">Open it →</a>
           </div>
         </article>
 
@@ -182,7 +167,7 @@
             <h3>StoryVault</h3>
             <p>Your grandmother knows two hundred stories and nobody has written down one. A private family archive that texts relatives one question a week and keeps the answers — in writing or in their own voice.</p>
             <div class="proj__url">storyvault.chimaura.com</div>
-            <div class="proj__foot"><a class="link" href="https://storyvault.chimaura.com" target="_blank" rel="noopener">Open it</a></div>
+            <a class="arrow" href="https://storyvault.chimaura.com" target="_blank" rel="noopener">Open it →</a>
           </div>
         </article>
 
@@ -193,60 +178,46 @@
             <h3>Parent Playbook</h3>
             <p>You don't need to be a coach, you need the plan. A week of at-home work built for your kid's age and sport — what to practice, when to rest, and what to actually say on the drive home.</p>
             <div class="proj__url">playbook.chimaura.com</div>
-            <div class="proj__foot"><a class="link" href="https://playbook.chimaura.com" target="_blank" rel="noopener">Open it</a></div>
+            <a class="arrow" href="https://playbook.chimaura.com" target="_blank" rel="noopener">Open it →</a>
           </div>
         </article>
 
       </div>
 
-      <div class="btnrow" style="margin-top:32px;justify-content:center">
+      <div style="text-align:center;margin-top:32px">
         <a class="btn btn--ghost" href="/work">All seven products →</a>
       </div>
     </div>
   </section>
 
-  <hr class="rule">
-
-  <!-- ============================================================== why -- -->
   <section class="section">
     <div class="wrap split">
       <div>
         <p class="eyebrow">The why</p>
-        <p class="quote">What isn't captured disappears.</p>
+        <p class="pull">What isn't captured disappears.</p>
       </div>
-      <div style="display:grid;gap:18px">
-        <p class="lede" style="max-width:none">
-          I was the kid who took apart the Nintendo to see how it worked. I never
-          really stopped — I just moved on to bigger machines.
-        </p>
-        <p class="lede" style="max-width:none">
-          I lost my mom at 13. Last year I lost my grandmother's stories, which is a
-          different kind of loss: she was still here, and the stories weren't written
-          down anywhere. That's the whole reason StoryVault exists. Parent Playbook
-          exists because my six-year-old started tackle football and I had no idea what
-          I was doing. AllFantasy exists because I was tired of four tabs.
-        </p>
-        <p class="lede" style="max-width:none">
-          I'm not a traditional coder. I'm a product architect who works AI-native —
-          I diagnose the real problem, design the fix, and direct the build. It means
-          we ship in weeks what used to take a quarter, and we show the work while
-          we do it. Ugly first versions included.
-        </p>
-        <div class="btnrow" style="margin-top:6px">
-          <a class="btn btn--ghost" href="/services">How we actually work</a>
-        </div>
+      <div class="prose">
+        <p>I was the kid who took apart the Nintendo to see how it worked. I never
+           really stopped — I just moved on to bigger machines.</p>
+        <p>I lost my mom at 13. Last year I lost my grandmother's stories, which is a
+           different kind of loss: she was still here, and the stories weren't written
+           down anywhere. That's the whole reason StoryVault exists. Parent Playbook
+           exists because my six-year-old started tackle football and I had no idea what
+           I was doing. AllFantasy exists because I was tired of four tabs.</p>
+        <p>I'm not a traditional coder. I'm a product architect who works AI-native —
+           I diagnose the real problem, design the fix, and direct the build. It means
+           we ship in weeks what used to take a quarter, and we show the work while
+           we do it. Ugly first versions included.</p>
+        <a class="btn btn--ghost" href="/services">How we actually work →</a>
       </div>
     </div>
   </section>
 
-  <hr class="rule">
-
-  <!-- ============================================================ steps -- -->
-  <section class="section">
+  <section class="section--flush">
     <div class="wrap split">
       <div>
         <p class="eyebrow">The process</p>
-        <h2 style="font-size:clamp(26px,3.4vw,38px);max-width:16ch">Take it apart. Then build it back.</h2>
+        <h2 class="h3" style="max-width:14ch">Take it apart. Then build it back.</h2>
       </div>
       <div class="steps">
         <div class="step">
@@ -281,16 +252,13 @@
     </div>
   </section>
 
-  <!-- ============================================================== cta -- -->
-  <section class="section band">
-    <div class="wrap" style="display:grid;gap:26px;justify-items:start">
+  <section class="band band--tall">
+    <div class="wrap band__in">
       <p class="eyebrow">Tell us what's broken</p>
-      <h2 style="font-size:clamp(28px,4.4vw,50px);max-width:18ch">If it annoys you every week, it's worth building.</h2>
-      <p class="lede" style="max-width:56ch">
-        Bring us the workaround you've been living with. First call is free and we'll
-        tell you straight if we're the wrong shop for it.
-      </p>
-      <div class="btnrow">
+      <h2 style="font-size:clamp(28px,4.2vw,48px);max-width:18ch">If it annoys you every week, it's worth building.</h2>
+      <p style="font-size:17px;max-width:56ch">Bring us the workaround you've been living with. First call is free and we'll
+         tell you straight if we're the wrong shop for it.</p>
+      <div class="btnrow" style="margin-top:4px">
         <a class="btn btn--clay" href="/contact">Start a project</a>
         <a class="btn btn--ghost" href="/headless">Headless fantasy →</a>
       </div>
@@ -311,21 +279,21 @@
       </div>
       <div>
         <h4>Studio</h4>
-        <ul>
-          <li><a href="/work">Work</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/headless">Headless division</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
+        <div class="footer__links">
+          <a href="/work">Work</a>
+          <a href="/services">Services</a>
+          <a href="/headless">Headless division</a>
+          <a href="/contact">Contact</a>
+        </div>
       </div>
       <div>
         <h4>Products</h4>
-        <ul>
-          <li><a href="https://allfantasy.ai" target="_blank" rel="noopener">AllFantasy</a></li>
-          <li><a href="https://chimaura.com" target="_blank" rel="noopener">ChimAura</a></li>
-          <li><a href="https://cafeconchimmy.com" target="_blank" rel="noopener">Café Con Chimmy</a></li>
-          <li><a href="/work">Everything else</a></li>
-        </ul>
+        <div class="footer__links">
+          <a href="https://allfantasy.ai" target="_blank" rel="noopener">AllFantasy</a>
+          <a href="https://chimaura.com" target="_blank" rel="noopener">ChimAura</a>
+          <a href="https://cafeconchimmy.com" target="_blank" rel="noopener">Café Con Chimmy</a>
+          <a href="/work">Everything else</a>
+        </div>
       </div>
     </div>
     <div class="footer__base">

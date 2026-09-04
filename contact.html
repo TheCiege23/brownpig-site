@@ -10,10 +10,12 @@
 <link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="topbar">
   <div class="wrap topbar__in">
@@ -21,24 +23,23 @@
       <span class="brand__mark"><img src="assets/logo.webp" alt="" onerror="this.parentNode.textContent='BP'"></span>
       <span class="brand__word">BROWN <em>PIG</em></span>
     </a>
-    <button class="navtoggle" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav">
       <a href="/work">Work</a>
       <a href="/services">Services</a>
       <a href="/headless">Headless</a>
       <a href="/contact" aria-current="page">Contact</a>
-      <a class="btn btn--primary btn--sm" href="#form">Start a project</a>
+      <a class="btn btn--primary btn--sm" href="/contact">Start a project</a>
     </nav>
   </div>
 </header>
 
-<main>
+<main id="main">
 
-  <section class="section section--tight">
+  <section class="hero hero--plain">
     <div class="wrap">
-      <p class="eyebrow">Contact</p>
-      <h1 style="font-size:clamp(34px,5.4vw,60px);max-width:16ch">Tell us what's broken.</h1>
-      <p class="lede" style="margin-top:20px">
+      <p class="eyebrow eyebrow--deep">Contact</p>
+      <h1>Tell us what's broken.</h1>
+      <p class="hero__lede">
         The first call is free, takes about thirty minutes, and isn't a sales call.
         You describe the workaround you've been living with, we ask the annoying
         questions, and you leave knowing whether it's worth building — even if the
@@ -47,34 +48,30 @@
     </div>
   </section>
 
-  <hr class="rule">
-
-  <section class="section" id="form">
+  <section class="section--flush">
     <div class="wrap split">
 
-      <div style="display:grid;gap:26px">
-        <div>
-          <p class="eyebrow">What helps most</p>
-          <div class="steps" style="margin-top:-6px">
-            <div class="step">
-              <div class="step__n">01</div>
-              <div><h3>The workaround</h3><p>What are you doing manually right now? That's usually the real brief.</p></div>
-            </div>
-            <div class="step">
-              <div class="step__n">02</div>
-              <div><h3>Who it hurts</h3><p>You, your staff, or your customers. Changes what we build first.</p></div>
-            </div>
-            <div class="step">
-              <div class="step__n">03</div>
-              <div><h3>Your deadline</h3><p>Even a rough one. "Before the season starts" is a real date to us.</p></div>
-            </div>
+      <div>
+        <p class="eyebrow">What helps most</p>
+        <div class="steps" style="margin-top:8px">
+          <div class="step">
+            <div class="step__n">01</div>
+            <div><h3>The workaround</h3><p>What are you doing manually right now? That's usually the real brief.</p></div>
+          </div>
+          <div class="step">
+            <div class="step__n">02</div>
+            <div><h3>Who it hurts</h3><p>You, your staff, or your customers. Changes what we build first.</p></div>
+          </div>
+          <div class="step">
+            <div class="step__n">03</div>
+            <div><h3>Your deadline</h3><p>Even a rough one. "Before the season starts" is a real date to us.</p></div>
           </div>
         </div>
 
-        <div class="card">
+        <div class="formcard" style="margin-top:28px">
           <h3 style="font-size:18px">Rather just email?</h3>
           <p style="font-size:15px">
-            <a class="link" href="mailto:support@brownpigllc.com">support@brownpigllc.com</a>
+            <a class="arrow" href="mailto:support@brownpigllc.com">support@brownpigllc.com</a>
           </p>
           <p style="font-size:14px;color:var(--ink-faint)">
             Asking about Headless? Say what you'd build on the fantasy engine — that's
@@ -85,7 +82,7 @@
 
       <div>
         <form class="form" id="contactForm" novalidate>
-          <div class="row2">
+          <div class="pair">
             <div class="field">
               <label for="name">Your name</label>
               <input id="name" name="name" type="text" autocomplete="name" required>
@@ -96,9 +93,9 @@
             </div>
           </div>
 
-          <div class="row2">
+          <div class="pair">
             <div class="field">
-              <label for="company">Company <span style="font-weight:400;color:var(--ink-faint)">(optional)</span></label>
+              <label for="company">Company <span class="opt">(optional)</span></label>
               <input id="company" name="company" type="text" autocomplete="organization">
             </div>
             <div class="field">
@@ -114,7 +111,7 @@
           </div>
 
           <div class="field">
-            <label for="budget">Rough budget <span style="font-weight:400;color:var(--ink-faint)">(optional, but it saves us both time)</span></label>
+            <label for="budget">Rough budget <span class="opt">(optional, but it saves us both time)</span></label>
             <select id="budget" name="budget">
               <option value="">Prefer not to say yet</option>
               <option>Under $5k</option>
@@ -128,18 +125,18 @@
           <div class="field">
             <label for="message">What's broken?</label>
             <textarea id="message" name="message" required placeholder="What are you doing manually right now that you wish just happened? Rough is fine — we'll dig into it on the call."></textarea>
-            <span class="field__hint">The more specific the annoyance, the better the first call goes.</span>
+            <span class="note" style="font-size:13.5px;color:var(--ink-mute)">The more specific the annoyance, the better the first call goes.</span>
           </div>
 
           <!-- simple bot trap; humans never see or fill this -->
-          <div style="position:absolute;left:-9999px" aria-hidden="true">
+          <div class="hp" aria-hidden="true">
             <label for="website">Leave this empty</label>
             <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
           </div>
 
           <div class="btnrow" style="margin-top:6px;align-items:center">
             <button class="btn btn--primary" type="submit" id="submitBtn">Send it</button>
-            <span id="formNote" style="font-size:14px;color:var(--ink-faint)">We reply within one business day.</span>
+            <span id="formNote" class="note">We reply within one business day.</span>
           </div>
         </form>
       </div>
@@ -161,21 +158,21 @@
       </div>
       <div>
         <h4>Studio</h4>
-        <ul>
-          <li><a href="/work">Work</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/headless">Headless division</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
+        <div class="footer__links">
+          <a href="/work">Work</a>
+          <a href="/services">Services</a>
+          <a href="/headless">Headless division</a>
+          <a href="/contact">Contact</a>
+        </div>
       </div>
       <div>
         <h4>Products</h4>
-        <ul>
-          <li><a href="https://allfantasy.ai" target="_blank" rel="noopener">AllFantasy</a></li>
-          <li><a href="https://chimaura.com" target="_blank" rel="noopener">ChimAura</a></li>
-          <li><a href="https://cafeconchimmy.com" target="_blank" rel="noopener">Café Con Chimmy</a></li>
-          <li><a href="/work">Everything else</a></li>
-        </ul>
+        <div class="footer__links">
+          <a href="https://allfantasy.ai" target="_blank" rel="noopener">AllFantasy</a>
+          <a href="https://chimaura.com" target="_blank" rel="noopener">ChimAura</a>
+          <a href="https://cafeconchimmy.com" target="_blank" rel="noopener">Café Con Chimmy</a>
+          <a href="/work">Everything else</a>
+        </div>
       </div>
     </div>
     <div class="footer__base">
@@ -206,7 +203,7 @@
 
   function say(msg, ok) {
     note.textContent = msg;
-    note.style.color = ok ? "var(--clay-deep)" : "#B3261E";
+    note.className = ok ? "note" : "note note--bad";
   }
 
   form.addEventListener("submit", function (e) {
@@ -232,11 +229,11 @@
       .then(function (res) {
         if (res.ok) {
           form.innerHTML =
-            '<div class="card"><h3>Got it.</h3>' +
+            '<div class="formcard"><h3>Got it.</h3>' +
             '<p>Thanks ' + String(data.name).replace(/[<>&]/g, "") + ' — we read every one of these ' +
             'ourselves and we\'ll come back to you within one business day.</p>' +
             '<p style="font-size:14px;color:var(--ink-faint)">If it\'s urgent, ' +
-            '<a class="link" href="mailto:support@brownpigllc.com">email us directly</a>.</p></div>';
+            '<a class="arrow" href="mailto:support@brownpigllc.com">email us directly</a>.</p></div>';
         } else {
           throw new Error(res.body && res.body.error ? res.body.error : "send failed");
         }
@@ -251,9 +248,9 @@
           "\nBudget: " + (data.budget || "—") + "\n\n" + data.message
         );
         note.innerHTML =
-          'Couldn\'t send from here — <a class="link" href="mailto:support@brownpigllc.com?subject=' +
+          'Couldn\'t send from here — <a class="arrow" href="mailto:support@brownpigllc.com?subject=' +
           subject + '&body=' + body + '">open it in your email instead</a>.';
-        note.style.color = "#B3261E";
+        note.className = "note note--bad";
       });
   });
 })();

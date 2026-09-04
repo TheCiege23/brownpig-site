@@ -10,10 +10,12 @@
 <link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="topbar">
   <div class="wrap topbar__in">
@@ -21,7 +23,6 @@
       <span class="brand__mark"><img src="assets/logo.webp" alt="" onerror="this.parentNode.textContent='BP'"></span>
       <span class="brand__word">BROWN <em>PIG</em></span>
     </a>
-    <button class="navtoggle" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav">
       <a href="/work">Work</a>
       <a href="/services">Services</a>
@@ -32,59 +33,50 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
-  <section class="section section--tight">
+  <section class="hero hero--plain">
     <div class="wrap">
-      <p class="eyebrow">The Headless division · In development</p>
-      <h1 style="font-size:clamp(34px,5.4vw,60px);max-width:17ch">Fantasy sports, without the front end.</h1>
-      <p class="lede" style="margin-top:20px">
+      <p class="eyebrow eyebrow--deep">The Headless division · In development</p>
+      <h1>Fantasy sports, without the front end.</h1>
+      <p class="hero__lede">
         We built the engine that runs AllFantasy — real league connections, live rosters,
         scoring, the whole unglamorous middle layer that takes months to get right. Headless
         is that engine opened up, so somebody else can put their own product on top of it
         instead of building it again from scratch.
       </p>
       <div class="btnrow" style="margin-top:30px">
-        <a class="btn btn--primary" href="/contact?type=headless">Talk to us early</a>
+        <a class="btn btn--primary" href="/contact">Talk to us early</a>
         <a class="btn btn--ghost" href="https://allfantasy.ai" target="_blank" rel="noopener">See the engine running →</a>
       </div>
     </div>
   </section>
 
-  <hr class="rule">
-
-  <section class="section">
+  <section class="section--flush">
     <div class="wrap split">
       <div>
         <p class="eyebrow">Where it's at</p>
-        <h2 style="font-size:clamp(26px,3.4vw,38px);max-width:14ch">Being scoped right now.</h2>
+        <h2 class="h3" style="max-width:14ch">Being scoped right now.</h2>
       </div>
-      <div style="display:grid;gap:18px">
-        <p class="lede" style="max-width:none">
-          We're not going to publish an API reference and a pricing table for something
-          that isn't finished — that's exactly the kind of vapour this whole studio was
-          built to avoid. What exists today is a working fantasy engine in production,
-          serving a real product with real users, and a decision to open it up.
-        </p>
-        <p class="lede" style="max-width:none">
-          What it looks like from the outside — endpoints, licensing, whether it's an API
-          or a full white-label build — is being worked out now. If you're the kind of
-          person who'd use this, the most useful thing you can do is tell us what you'd
-          need from it before we lock the shape. Early conversations are shaping it.
-        </p>
-        <div class="btnrow" style="margin-top:6px">
-          <a class="btn btn--clay" href="/contact?type=headless">Tell us what you'd need</a>
-        </div>
+      <div class="prose">
+        <p>We're not going to publish an API reference and a pricing table for something
+           that isn't finished — that's exactly the kind of vapour this whole studio was
+           built to avoid. What exists today is a working fantasy engine in production,
+           serving a real product with real users, and a decision to open it up.</p>
+        <p>What it looks like from the outside — endpoints, licensing, whether it's an API
+           or a full white-label build — is being worked out now. If you're the kind of
+           person who'd use this, the most useful thing you can do is tell us what you'd
+           need from it before we lock the shape. Early conversations are shaping it.</p>
+        <a class="btn btn--ghost" href="/contact">Tell us what you'd need →</a>
       </div>
     </div>
   </section>
 
-  <hr class="rule">
-
-  <section class="section">
+  <section class="section--flush">
     <div class="wrap">
       <p class="eyebrow">Who we think this is for</p>
-      <h2 style="font-size:clamp(26px,3.4vw,38px);max-width:20ch">Early guesses, not promises.</h2>
+      <h2 class="h3" style="max-width:18ch">Early guesses, not promises.</h2>
+
       <div class="grid grid--3" style="margin-top:40px">
         <article class="card">
           <div class="card__num">01</div>
@@ -102,23 +94,22 @@
           <p>You want to ship a fantasy product and you'd rather spend your time on what makes yours different than on parsing league data for six months.</p>
         </article>
       </div>
-      <p class="lede" style="margin-top:34px">
+
+      <p class="lede" style="margin-top:32px">
         If you're none of these and you still want it, that's genuinely useful to hear —
         it means we've drawn the box wrong.
       </p>
     </div>
   </section>
 
-  <section class="section band">
-    <div class="wrap" style="display:grid;gap:26px;justify-items:start">
+  <section class="band band--tall">
+    <div class="wrap band__in">
       <p class="eyebrow">Get in early</p>
-      <h2 style="font-size:clamp(28px,4.4vw,50px);max-width:20ch">Easier to shape now than to change later.</h2>
-      <p class="lede" style="max-width:56ch">
-        Tell us what you'd build and what you'd need from us to build it. We'll be honest
-        about the timeline, and honest about whether you're better off waiting.
-      </p>
-      <div class="btnrow">
-        <a class="btn btn--clay" href="/contact?type=headless">Start the conversation</a>
+      <h2 style="font-size:clamp(28px,4.2vw,48px);max-width:20ch">Easier to shape now than to change later.</h2>
+      <p style="font-size:17px;max-width:56ch">Tell us what you'd build and what you'd need from us to build it. We'll be honest
+         about the timeline, and honest about whether you're better off waiting.</p>
+      <div class="btnrow" style="margin-top:4px">
+        <a class="btn btn--clay" href="/contact">Start the conversation</a>
         <a class="btn btn--ghost" href="/services">Custom builds instead →</a>
       </div>
     </div>
@@ -138,21 +129,21 @@
       </div>
       <div>
         <h4>Studio</h4>
-        <ul>
-          <li><a href="/work">Work</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/headless">Headless division</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
+        <div class="footer__links">
+          <a href="/work">Work</a>
+          <a href="/services">Services</a>
+          <a href="/headless">Headless division</a>
+          <a href="/contact">Contact</a>
+        </div>
       </div>
       <div>
         <h4>Products</h4>
-        <ul>
-          <li><a href="https://allfantasy.ai" target="_blank" rel="noopener">AllFantasy</a></li>
-          <li><a href="https://chimaura.com" target="_blank" rel="noopener">ChimAura</a></li>
-          <li><a href="https://cafeconchimmy.com" target="_blank" rel="noopener">Café Con Chimmy</a></li>
-          <li><a href="/work">Everything else</a></li>
-        </ul>
+        <div class="footer__links">
+          <a href="https://allfantasy.ai" target="_blank" rel="noopener">AllFantasy</a>
+          <a href="https://chimaura.com" target="_blank" rel="noopener">ChimAura</a>
+          <a href="https://cafeconchimmy.com" target="_blank" rel="noopener">Café Con Chimmy</a>
+          <a href="/work">Everything else</a>
+        </div>
       </div>
     </div>
     <div class="footer__base">

@@ -121,9 +121,12 @@ function serveFile(res, filePath, code) {
   fs.readFile(filePath, (err, buf) => {
     if (err) { return send(res, 500, "Server error"); }
     const ext = path.extname(filePath).toLowerCase();
-    const cache = ext === ".html"
-      ? "public, max-age=0, must-revalidate"
-      : "public, max-age=31536000, immutable";
+    // Everything revalidates. "immutable" is only safe on content-hashed
+    // filenames, and nothing here has a hash — site.css keeps its name across
+    // every redesign, so caching it for a year would serve returning visitors
+    // an old stylesheet against new markup. This matches what the Cloudflare
+    // asset layer sends for the same files.
+    const cache = "public, max-age=0, must-revalidate";
     send(res, code || 200, buf, {
       "Content-Type": TYPES[ext] || "application/octet-stream",
       "Cache-Control": cache

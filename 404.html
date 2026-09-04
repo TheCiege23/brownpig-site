@@ -8,7 +8,7 @@
 <link rel="icon" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
@@ -19,7 +19,6 @@
       <span class="brand__mark"><img src="/assets/logo.webp" alt="" onerror="this.parentNode.textContent='BP'"></span>
       <span class="brand__word">BROWN <em>PIG</em></span>
     </a>
-    <button class="navtoggle" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav">
       <a href="/work">Work</a>
       <a href="/services">Services</a>
@@ -30,15 +29,14 @@
   </div>
 </header>
 
-<main>
-  <section class="section" style="min-height:52vh;display:grid;align-content:center">
-    <div class="wrap">
-      <p class="eyebrow">404</p>
-      <h1 style="font-size:clamp(32px,5vw,56px);max-width:18ch">This one we took apart and didn't build back.</h1>
-      <p class="lede" style="margin-top:20px">
-        The page you're after isn't here. The things that definitely are:
-      </p>
-      <div class="btnrow" style="margin-top:28px">
+<main id="main">
+  <section class="hero hero--plain">
+    <div class="hero__blob" aria-hidden="true"></div>
+    <div class="wrap" style="position:relative">
+      <p class="eyebrow eyebrow--deep">404</p>
+      <h1>This one we took apart and didn't build back.</h1>
+      <p class="hero__lede">The page you're after isn't here. The things that definitely are:</p>
+      <div class="btnrow" style="margin-top:30px">
         <a class="btn btn--primary" href="/">Home</a>
         <a class="btn btn--ghost" href="/work">The work</a>
         <a class="btn btn--ghost" href="/contact">Contact</a>
@@ -46,6 +44,15 @@
     </div>
   </section>
 </main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__base" style="margin-top:0;padding-top:0;border-top:0">
+      <span>© <span data-year>2026</span> Brown Pig LLC. All rights reserved.</span>
+      <span>Wyoming, USA · <a href="mailto:support@brownpigllc.com">support@brownpigllc.com</a></span>
+    </div>
+  </div>
+</footer>
 
 <script src="/assets/site.js"></script>
 </body>
