@@ -1,8 +1,8 @@
-# Cloudflare appends its managed block (AI-crawler rules and content signals)
-# below this. Search crawlers are allowed there; only AI-training agents are
-# disallowed. Keep this file minimal so the two do not contradict each other.
-
-User-agent: *
-Allow: /
+# Cloudflare PREPENDS its managed block above this: a "User-agent: *" group
+# with Allow: / and a content signal, then Disallow rules for the AI-training
+# crawlers. Do not declare another "User-agent: *" group here - it would be a
+# duplicate of one that already exists, and parsers differ on how they merge
+# repeated groups. Sitemap is a non-group directive, so it applies wherever it
+# sits in the file.
 
 Sitemap: https://brownpigllc.com/sitemap.xml
