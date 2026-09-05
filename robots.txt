@@ -1,0 +1,8 @@
+# Cloudflare appends its managed block (AI-crawler rules and content signals)
+# below this. Search crawlers are allowed there; only AI-training agents are
+# disallowed. Keep this file minimal so the two do not contradict each other.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://brownpigllc.com/sitemap.xml

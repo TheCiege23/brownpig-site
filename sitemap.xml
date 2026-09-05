@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 404.html is deliberately absent: it carries noindex. Regenerate lastmod
+     dates from git when pages change; nothing here updates them automatically. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://brownpigllc.com/</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://brownpigllc.com/work</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://brownpigllc.com/services</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://brownpigllc.com/headless</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://brownpigllc.com/contact</loc>
+    <lastmod>2026-09-05</lastmod>
+  </url>
+</urlset>
