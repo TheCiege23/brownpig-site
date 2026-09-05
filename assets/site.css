@@ -585,7 +585,54 @@ p { margin: 0; }
 }
 .footer__base a { color: var(--clay-700); }
 
+/* The hamburger only exists below 861px. site.js toggles [hidden] on #nav and
+   keys off the same 861px breakpoint, so the two must stay in step. The nav is
+   NOT hidden in the markup on purpose: if the script never runs, the links stay
+   reachable as a stacked list instead of disappearing behind a dead button. */
+.navtoggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  cursor: pointer;
+}
+.navtoggle:hover { background: var(--clay-100); }
+.navtoggle:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+
 /* ------------------------------------------------------------ responsive -- */
+
+/* Below 861px the header was wrapping to three rows - 166px of a 812px phone,
+   permanently, because .topbar is sticky. The links now collapse behind the
+   toggle and the bar is one row again. */
+@media (max-width: 860px) {
+  .navtoggle { display: inline-flex; }
+
+  /* .nav sets display:flex, which beats the [hidden] UA rule on its own, so
+     the attribute needs an explicit selector to actually hide anything. */
+  .nav[hidden] { display: none; }
+
+  .nav {
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 6px 0 2px;
+  }
+  /* 44px targets in the drawer, where there is room for them. */
+  .nav a:not(.btn) { padding: 12px 14px; }
+  /* .btn--sm is 38px, which is under the 44px touch floor. In the drawer
+     there is room to give it the full target. */
+  .nav .btn { margin-left: 0; margin-top: 6px; text-align: center;
+              min-height: 44px; display: flex; align-items: center;
+              justify-content: center; }
+}
+
 
 @media (max-width: 940px) {
   .hero__in    { grid-template-columns: 1fr; }
