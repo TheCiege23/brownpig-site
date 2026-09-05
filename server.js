@@ -135,7 +135,15 @@ function serveFile(res, filePath, code) {
 }
 
 const server = http.createServer((req, res) => {
-  const url = new URL(req.url, `http://${req.headers.host || "localhost"}`);
+  // A request line like "//" makes URL() treat the path as protocol-relative
+  // and throw, which was an uncaught exception that took the whole process
+  // down. Reject the malformed request instead of dying on it.
+  let url;
+  try {
+    url = new URL(req.url, `http://${req.headers.host || "localhost"}`);
+  } catch {
+    return send(res, 400, "Bad request", { "Content-Type": TYPES[".txt"] });
+  }
 
   if (url.pathname === "/api/contact") {
     if (req.method !== "POST") { return json(res, 405, { error: "Method not allowed." }); }
