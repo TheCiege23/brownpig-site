@@ -242,8 +242,21 @@ p { margin: 0; }
   font-size: 14px;
   color: var(--clay-700);
   transition: color .16s;
+  position: relative;
 }
 .arrow:hover { color: var(--clay-600); }
+
+/* The text box is ~22px, under the 24px WCAG 2.5.8 floor and well under the
+   44px both Apple and Google ask for - and these arrows are the primary action
+   on every product card. The hit area is grown with a pseudo-element instead of
+   min-height because three of these sit mid-sentence in contact.html, where
+   forcing a 44px line box would wreck the paragraph. Layout is untouched;
+   only the clickable region changes. */
+.arrow::after {
+  content: "";
+  position: absolute;
+  inset: -11px 0;
+}
 
 /* ---------------------------------------------------------------- header -- */
 
@@ -428,9 +441,25 @@ p { margin: 0; }
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: top center;
-  /* Washed back so the screenshots read as texture rather than competing
-     with the page's own palette. */
-  filter: saturate(.6) contrast(.85) brightness(1.1) opacity(.94);
+  /* Barely knocked back so the grid still reads as one surface, but the
+     products stay legible. The old wash - saturate(.6) with opacity(.94) over
+     a clay tint - argued against the page's own line, "click any of them,
+     they're not mockups". The opacity is gone entirely: blending a screenshot
+     into a peach background was most of why these looked dead. */
+  filter: saturate(.88) contrast(.96) brightness(1.03);
+  transition: filter .22s ease;
+}
+/* Full fidelity on intent. focus-within covers keyboard users, who never
+   trigger :hover. */
+.proj:hover .shot img,
+.proj:focus-within .shot img { filter: none; }
+
+/* On touch there is no hover, so the reveal never fires and a phone would be
+   stuck with the knocked-back version forever. Give those users the real
+   screenshot from the start - they are the ones most likely to be deciding
+   whether a product is worth opening. */
+@media (hover: none) {
+  .shot img { filter: none; }
 }
 .shot__skeleton {
   position: absolute; inset: 0;
